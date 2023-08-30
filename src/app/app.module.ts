@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MenubarModule } from 'primeng/menubar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -25,6 +26,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SigninComponent } from './home-page/sign-in/signin.component';
 import { RewardComponent } from './home-page/reward/reward.component';
 import { SolutionComponent } from './home-page/solution/solution.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -49,12 +51,14 @@ import { SolutionComponent } from './home-page/solution/solution.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MenubarModule,
     ButtonModule,
+    BrowserAnimationsModule,
     CalendarModule,
     AutoCompleteModule,
     DropdownModule,
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent],
 })
