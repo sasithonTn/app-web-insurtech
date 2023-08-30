@@ -15,7 +15,7 @@ import { BoardComponent } from './admin/board/board.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
   //-----------------------user------------------------
   {path: 'user', component:UserComponent },
   {path: 'register', component:RegisterComponent},
