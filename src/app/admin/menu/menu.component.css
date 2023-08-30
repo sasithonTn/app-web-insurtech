@@ -1,0 +1,10 @@
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.menu-list {
+  display: grid;
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}

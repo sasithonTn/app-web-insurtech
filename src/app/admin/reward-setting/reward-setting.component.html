@@ -46,5 +46,32 @@
                 </span>
              </div>
         </div>
+            <button class="draw-button">Add</button>
+            <button class="draw-button">Clear</button>
+
     </div>
+  </div>
+<div class="table-container">
+  <button class="draw-button">Save</button>
+  <button class="draw-button">Delete</button>
+  <table>
+    <thead>
+      <tr>
+        <th>อันดับ</th>
+        <th>วันที่</th>
+        <th>เวลา</th>
+        <th>จำนวน</th>
+        <th>รางวัล</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item">
+        <td>{{ item.date }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+
+
+
