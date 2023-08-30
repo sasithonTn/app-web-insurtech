@@ -11,7 +11,6 @@ import { SolutionComponent } from './home-page/solution/solution.component';
 import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
-import { BoardComponent } from './admin/board/board.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 
 const routes: Routes = [
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path: 'menu', component:MenuComponent},
   {path: 'reward-setting', component:RewardSettingComponent},
   {path: 'lucky-draw', component:LuckyDrawComponent},
-  {path: 'board', component:BoardComponent},
   {path: 'reset-password', component:ResetPasswordComponent},
 
 //-----------------------------home---------------------------
@@ -34,7 +32,7 @@ const routes: Routes = [
   {path: 'sign-in', component:SigninComponent},
   {path: 'reward', component:RewardComponent},
   {path: 'solution', component:SolutionComponent},
- 
+
 ];
 
 @NgModule({

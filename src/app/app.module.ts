@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,7 +13,6 @@ import { AdminComponent } from './admin/admin.component';
 import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
-import { BoardComponent } from './admin/board/board.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 
 //-------------------------------------home------------------------------------------
@@ -41,7 +39,6 @@ import { SolutionComponent } from './home-page/solution/solution.component';
     MenuComponent,
     RewardSettingComponent,
     LuckyDrawComponent,
-    BoardComponent,
     ResetPasswordComponent
   ],
   imports: [
