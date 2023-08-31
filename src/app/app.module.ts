@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -24,6 +29,9 @@ import { SigninComponent } from './home-page/sign-in/signin.component';
 import { RewardComponent } from './home-page/reward/reward.component';
 import { SolutionComponent } from './home-page/solution/solution.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { ContentComponent } from './component/content/content.component';
+
 
 
 
@@ -44,14 +52,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RewardSettingComponent,
     LuckyDrawComponent,
     BoardComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    NavbarComponent,
+    ContentComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MenubarModule,
     ButtonModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule ,
+    RippleModule,
+    CardModule,
+    CarouselModule
     
   ],
   providers: [],
