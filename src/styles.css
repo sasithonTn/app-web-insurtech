@@ -1,9 +1,14 @@
 body{
-    width: 1250px;
-  height: 800px;
-    background: linear-gradient(rgba(47,58,125,1), rgba(53,44,109,1));
-
+    width: auto;
+    height: 800px;
+  background: linear-gradient(172deg, #2F3A7D 0%, #352C6D 50%, #3B286A 100%);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow-y: auto; 
 }
+
 @media screen and (min-width: 1729px) {
   .layout-main, .landing-wrapper {
       width: 1504px;
