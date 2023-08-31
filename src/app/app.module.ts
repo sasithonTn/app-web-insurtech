@@ -29,9 +29,6 @@ import { SolutionComponent } from './home-page/solution/solution.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
