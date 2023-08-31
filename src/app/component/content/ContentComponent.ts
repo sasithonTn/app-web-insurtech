@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -17,8 +18,8 @@ export class ContentComponent {
   ngOnInit(): void {
     console.log('aaaa');
   }
-  viewPdf(img:string) {
-      console.log(img);
+  viewPdf(img: string) {
+    console.log(img);
     console.log('ViewPdf');
   }
 }

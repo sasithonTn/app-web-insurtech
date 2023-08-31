@@ -8,9 +8,12 @@ import { MenuItem } from 'primeng/api';
 export class HomePageComponent {
   items: MenuItem[] | undefined;
 
-    ngOnInit() {
-      
+    ngOnInit():void {
+      console.log('aaaa');
         
     }
+viewPdf(){
+    console.log('ViewPdf')
+}
 }
 
