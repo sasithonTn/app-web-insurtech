@@ -1,1 +1,39 @@
-<p>signin works!</p>
+<app-navbar></app-navbar>
+
+<div class="card flex justify-content-center">
+  <p-card
+    [style]="{
+      width: '326px',
+      
+      'margin-left':'2.5em',
+      'margin-top': '5em ',
+      'background':
+        'linear-gradient(180deg, #6C4DEA 1%, #3C24B7 58%, #281062 100%)',
+        'border-radius': '22px',
+        
+      
+    }"
+  >
+    <h2 style="color: azure; text-align: center">SignIn</h2>
+
+    <p>
+      <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
+        <input pInputText id="username" [style]="{ width: '300px' }" />
+        <label htmlFor="username">Username</label>
+      </span>
+      <span
+        class="p-float-label"
+        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
+      >
+        <input pInputText id="e-mail" [style]="{ width: '300px' }" />
+        <label htmlFor="e-mail">e-mail</label>
+      </span>
+
+ 
+      <div class="card flex justify-content-center">
+
+        <p-button routerLink="/user" [style]="{'margin-top':'2em'}"
+        label="SignIn"></p-button>
+    </div>
+  </p-card>
+</div>

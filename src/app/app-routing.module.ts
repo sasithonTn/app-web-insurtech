@@ -4,10 +4,9 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SigninComponent } from './home-page/sign-in/signin.component';
-import { RewardComponent } from './home-page/reward/reward.component';
 import { RegisterComponent } from './user/register/register.component';
+import { RewardComponent } from './home-page/reward/reward.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
-import { SolutionComponent } from './home-page/solution/solution.component';
 import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
@@ -20,6 +19,7 @@ const routes: Routes = [
   {path: 'register', component:RegisterComponent},
   {path: 'change-password', component:ChangePasswordComponent},
 
+
 //---------------------------admin----------------------
   {path: 'admin', component:AdminComponent },
   {path: 'menu', component:MenuComponent},
@@ -31,7 +31,6 @@ const routes: Routes = [
   {path: 'home-page', component:HomePageComponent},
   {path: 'sign-in', component:SigninComponent},
   {path: 'reward', component:RewardComponent},
-  {path: 'solution', component:SolutionComponent},
 
 ];
 
