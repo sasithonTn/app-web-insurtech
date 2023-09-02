@@ -1,10 +1,28 @@
-<nav class="navbar">
-    <div class="navbar-logo">
-      <img  routerLink="/home-page" src="assets/images/yipintsoi.png" alt="Yipintsoi Logo" height="51" class="mr-2">
-    </div>
-    <div class="navbar-buttons">
-      <button routerLink="/register" class="register-button">Register</button>
-      <button routerLink="/sign-in" class="signin">SignIn</button>
-    </div>
-  </nav>
-  
+
+<div class="card">
+  <p-menubar
+    styleClass="custom-menubar"
+    [style]="{
+      background: 'linear-gradient(0deg, #2C4387 0%, #2C4387 100%), #1D8CF8',
+      'box-shadow':
+        '0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)'
+    }"
+  >
+    <ng-template pTemplate="start">
+      <img
+        routerLink="/home-page"
+        src="assets/images/yipintsoi.png"
+        height="50"
+        class="mr-2"
+      />
+    </ng-template>
+    <ng-template pTemplate="end">
+      <p-button
+        routerLink="/register"
+        label="Register"
+        styleClass="p-button-raised p-button-text p-button-help"
+      ></p-button>
+      <p-button routerLink="/sign-in" label="SignIn"></p-button>
+    </ng-template>
+  </p-menubar>
+</div>

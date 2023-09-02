@@ -1,6 +1,20 @@
 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 
-body{
+.footer {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(101.07, 59.97, 202.73, 0.80) 0%, rgba(46.45, 61.15, 150.66, 0.80) 52%);
+  border-radius: 100% 100% 0 0; /* ปรับค่า border-radius เพื่อให้เป็นครึ่งวงกลม */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden; /* เพื่อให้ส่วนที่เกินจากครึ่งวงกลมไม่แสดง */
+}
+
+ body{
     width: auto;
     height: 800px;
   background: linear-gradient(172deg, #2F3A7D 0%, #352C6D 50%, #3B286A 100%);
@@ -8,8 +22,8 @@ body{
   position: relative;
   top: 0px;
   left: 0px;
-  overflow-y: auto; 
-}
+  overflow-y: auto;
+}  
 
 @media screen and (min-width: 1729px) {
   .layout-main, .landing-wrapper {
@@ -116,3 +130,6 @@ body{
       }
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
