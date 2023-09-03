@@ -1,25 +1,39 @@
- <header class="navbar">
-    <div class="logo">Logo</div>
-    <div class="user-info">Username</div>
-  </header>
- <div>
-    <a href="menu" class="back-btn">Back</a>
- </div>
+ <app-navbar></app-navbar>
 
-<h2 class="lucky-draw">Luky Draw</h2>
-<h5 class="lucky-draw">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</h5>
-<div class="circle-container">
-  <div class="big-circle">
-    <div class="ball ball-1"></div>
-    <div class="ball ball-2"></div>
-    <div class="ball ball-3"></div>
-    <div class="ball ball-4"></div>
-    <div class="ball ball-5"></div>
-    <div class="ball ball-6"></div>
-    <div class="ball ball-7"></div>
+<div class="btmenu">
+<p-button icon="pi pi-microsoft" styleClass="p-button-rounded p-button-secondary" routerLink="/menu"></p-button>
+</div>
+
+<div class="title">
+ <h2>Lucky Draw</h2>
+</div>
+
+<div class="date">
+<h4 class="lucky-draw">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</h4>
+</div>
+
+<div class="big-circle">
+  <div class="ball" style="top: 81%; left: 50%;" ></div>
+  <div class="ball" style="top: 58%; left: 64%;"></div>
+  <div class="ball2" style="top: 65%; left: 75%;"></div>
+  <div class="ball2" style="top: 70%; left: 37%;"></div>
+  <div class="ball2" style="top: 66%; left: 50%;"></div>
+  <div class="ball" style="top: 45%; left: 25%;"></div>
+  <div class="ball2" style="top: 72%; left: 15%;"></div>
+  <div class="ball" style="top: 32%; left: 36%;"></div>
+</div>
+
+<div class="buttons">
+  <div>
+   <button class="button" (click)="draw()" >DRAW</button>
   </div>
 </div>
 
-  <button class="draw-button">Draw</button>
+<div *ngIf="showdialogreward">
+<app-dialog-reward (closeDialog)="closeDialog()"></app-dialog-reward>
+</div>
+
+<div class="footer"></div>
+
 
 

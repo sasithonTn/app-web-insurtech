@@ -33,6 +33,7 @@ import { SolutionComponent } from './home-page/solution/solution.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { ContentComponent } from './component/content/content.component';
+import { DialogRewardComponent } from './dialog-reward/dialog-reward.component';
 
 
 
@@ -53,6 +54,7 @@ import { ContentComponent } from './component/content/content.component';
     ResetPasswordComponent,
     NavbarComponent,
     ContentComponent,
+    DialogRewardComponent,
 
   ],
   imports: [
