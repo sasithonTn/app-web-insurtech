@@ -18,22 +18,31 @@
 
     <p>
       <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-        <input pInputText id="username" [style]="{ width: '300px' }" />
+        <input pInputText id="username" [style]="{ width: '300px','background':'#081D5B' , 'border-radius':'15px' }" />
         <label htmlFor="username">Username</label>
       </span>
-      <span
+      <!-- <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
         <input pInputText id="e-mail" [style]="{ width: '300px' }" />
         <label htmlFor="e-mail">e-mail</label>
+      </span> -->
+      <span
+        class="p-float-label"
+        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
+      >
+        <p-password  [(ngModel)]="value" [feedback]="false" ></p-password>
+        <label for="password">Password</label>
       </span>
+    </p>
 
- 
-      <div class="card flex justify-content-center">
-
-        <p-button routerLink="/user" [style]="{'margin-top':'2em'}"
-        label="SignIn"></p-button>
+    <div class="card flex justify-content-center">
+      <p-button
+        routerLink="/user"
+        [style]="{ 'margin-top': '2em' }"
+        label="SignIn"
+      ></p-button>
     </div>
   </p-card>
 </div>

@@ -1,8 +1,6 @@
 <app-navbar></app-navbar>
 
-
 <div class="card flex justify-content-center">
-  //;
   <p-card
     [style]="{
       width: '326px',
@@ -20,28 +18,60 @@
 
     <p>
       <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-        <input pInputText id="username" [style]="{ width: '300px' }" />
+        <input
+          pInputText
+          id="username"
+          [style]="{
+            width: '300px',
+            'border-radius': '15px',
+            background: ' #081D5B'
+          }"
+        />
         <label htmlFor="username">Username</label>
       </span>
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
-        <input pInputText id="e-mail" [style]="{ width: '300px' }" />
+        <input
+          pInputText
+          id="e-mail"
+          [style]="{
+            width: '300px',
+            'border-radius': '15px',
+            background: ' #081D5B'
+          }"
+        />
         <label htmlFor="e-mail">e-mail</label>
       </span>
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
-        <input pInputText id="TelephoneNo" [style]="{ width: '300px' }" />
+        <input
+          pInputText
+          id="TelephoneNo"
+          [style]="{
+            width: '300px',
+            'border-radius': '15px',
+            background: ' #081D5B'
+          }"
+        />
         <label htmlFor="TelephoneNo">TelephoneNo.</label>
       </span>
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
-        <input pInputText id="Company" [style]="{ width: '300px' }" />
+        <input
+          pInputText
+          id="Company"
+          [style]="{
+            width: '300px',
+            'border-radius': '15px',
+            background: ' #081D5B'
+          }"
+        />
         <label htmlFor="Company">Company</label>
       </span>
       <span
@@ -49,23 +79,29 @@
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
         <div class="card flex justify-content-center">
-          <p-treeSelect
-            class="w-full md:w-20rem"
-            containerStyleClass="w-full"
-            [(ngModel)]="selectedNodes"
-            display="chip"
-            selectionMode="checkbox"
-            placeholder="Select Item"
-          ></p-treeSelect>
+          <p-multiSelect
+            [style]="{ width: '18em' , 'background':'#081D5B' , 'border-radius':'15px'}"
+            [options]="solution"
+            [(ngModel)]="selectedSolution"
+            defaultLabel="Select a Solution"
+            optionLabel="name"
+          ></p-multiSelect>
         </div>
       </span>
     </p>
     <ng-template pTemplate="footer">
-      <p-button
-        label="Register"
-        [style]="{ 'margin-left': '5.5em' }"
-      ></p-button>
+      <p-button (click)="showDialog()" label="Register"></p-button>
+      <p-dialog
+        header="ลงทะเบียนสำเร็จ"
+        [(visible)]="visible"
+        [breakpoints]="{ '960px': '75vw' }"
+        [style]="{ width: '50vw' }"
+        [draggable]="false"
+        [resizable]="false"
+      >
+        <p>คุณได้ 1 สิทธิ์ลุ้นรางวัล</p>
+        <p-button routerLink="/user" label="หน้าแรก"></p-button>
+      </p-dialog>
     </ng-template>
   </p-card>
 </div>
->>>>>>>>> Temporary merge branch 2

@@ -11,31 +11,31 @@ import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
+import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
   //-----------------------user------------------------
-  {path: 'user', component:UserComponent },
-  {path: 'register', component:RegisterComponent},
-  {path: 'change-password', component:ChangePasswordComponent},
+  { path: 'user', component: UserComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'reward-complete-user', component: RewardCompleteUserComponent },
 
+  //---------------------------admin----------------------
+  { path: 'admin', component: AdminComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'reward-setting', component: RewardSettingComponent },
+  { path: 'lucky-draw', component: LuckyDrawComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
 
-//---------------------------admin----------------------
-  {path: 'admin', component:AdminComponent },
-  {path: 'menu', component:MenuComponent},
-  {path: 'reward-setting', component:RewardSettingComponent},
-  {path: 'lucky-draw', component:LuckyDrawComponent},
-  {path: 'reset-password', component:ResetPasswordComponent},
-
-//-----------------------------home---------------------------
-  {path: 'home-page', component:HomePageComponent},
-  {path: 'sign-in', component:SigninComponent},
-  {path: 'reward', component:RewardComponent},
-
+  //-----------------------------home---------------------------
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'sign-in', component: SigninComponent },
+  { path: 'reward', component: RewardComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,34 @@
+<app-navbar-complet></app-navbar-complet>
+
+<div class="card flex justify-content-center">
+  <h2 style="text-align: center; color: white">ประกาศรายชื่อผู้โชคดี</h2>
+  <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-card
+    [style]="{
+      'margin-top': '2em',
+      'border-radius': '32px',
+      background:
+        'linear-gradient(180deg, rgba(41, 42, 161, 0.90) 0%, rgba(72, 134, 212, 0.90) 81.25%)'
+    }"
+  >
+    <ng-container *ngFor="let item of myArray">
+      <div class="mb-2">
+        <!-- ใช้ class mb-2 เพื่อเพิ่มระยะห่างระหว่างรายการ -->
+        <p-button
+        routerLink="/reward-complete-user"
+          label="{{ item.label }}"
+          [style]="{
+            'margin-top': '1em',
+            'border-radius': '11px',
+            background: '#BDD4F1',
+            
+          }"
+          styleClass="p-button-raised p-button-text p-button-secondary"
+        ></p-button>
+      </div>
+    </ng-container>
+  </p-card>
+</div>

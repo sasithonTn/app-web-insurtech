@@ -23,6 +23,20 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { AccordionModule } from 'primeng/accordion';
 import { GalleriaModule } from 'primeng/galleria';
 import { TreeSelectModule } from 'primeng/treeselect';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmEventType, MessageService } from 'primeng/api';
+import { ListboxModule } from 'primeng/listbox';
+import { ScrollerModule } from 'primeng/scroller';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmationService } from 'primeng/api'; 
+import { MatButtonModule } from '@angular/material/button'; // นำเข้า MatButtonModule
+
+
+
+
+
 //--------------------------------------user---------------------------------------
 import { UserComponent } from './user/user.component';
 
@@ -45,7 +59,8 @@ import { ContentComponent } from './component/content/content.component';
 import { DialogModule } from 'primeng/dialog';
 import { RegisterComponent } from './user/register/register.component';
 import { CompletComponent } from './user/complet/complet.component';
-
+import { NavbarCompletComponent } from './component/navbar-complet/navbar-complet.component';
+import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +79,8 @@ import { CompletComponent } from './user/complet/complet.component';
     ContentComponent,
     RegisterComponent,
     CompletComponent,
+    NavbarCompletComponent,
+    RewardCompleteUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,10 +105,17 @@ import { CompletComponent } from './user/complet/complet.component';
     KeyFilterModule,
     AccordionModule,
     GalleriaModule,
-    TreeSelectModule
+    TreeSelectModule,
+    SplitButtonModule,
+    ToastModule,
+    ListboxModule,
+    ScrollerModule,
+    MultiSelectModule,
+    ConfirmPopupModule,
+    MatButtonModule
   ],
 
-  providers: [],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
