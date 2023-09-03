@@ -1,62 +1,37 @@
-<div class="content">
-  <h1>Products & Solution</h1>
+<h2 class="centered-text">Product & Solution</h2>
 
-  <div  class="solution">
-    
-    <div *ngFor="let item of cardInfolist" (click)="viewPdf(item.cardName)" class="card">
+<div class="card flex justify-content-center">
+  <p-accordion [multiple]="true" [activeIndex]="[0]">
+    <p-accordionTab
+      *ngFor="let solution of solutions"
+      [header]="solution.header"
+      [style]="{'background-color':'#ffffff00'}"
+    >
+      <p>
+        {{ solution.content }}
+      </p>
+    </p-accordionTab></p-accordion
+  >
+</div>
+<div class="card center-button">
+  <p-button routerLink="/register"
+    label="Register"
+    styleClass="p-button-rounded p-button-help"
+  ></p-button>
+</div>
 
-      <h3 class="title">{{item.cardName}}</h3>
-  
-    </div>
-  
-  
-    </div>
-  
-  <div>
-
-   
-   <!-- <p-button label="Submit"></p-button> -->
-   </div>
-   <button routerLink="/register" class="register2">Register</button>
-
- 
-   
-  
-
-  
-  <!-- <div id="event" class="event">Event</div> -->
-  <div id="slides">
-    <input checked type="radio" name="slider" id="slide1" class="set" />
-    <input type="radio" name="slider" id="slide2" class="set" />
-    <input type="radio" name="slider" id="slide3" class="set" />
-    <input type="radio" name="slider" id="slide4" class="set" />  
-        
-    <div class="mask">    
-      <div class="overflow">
-        
-        <div class="slide">
-          <img src="assets/images/giveaway winner.png?auto=compress&cs=tinysrgb&w=600" alt="image"/>
-        </div>
-        <div class="slide">
-          <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=600" alt="image"/>
-        </div>
-        <div class="slide">
-          <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=600" alt="image"/>
-        </div>
-        <div class="slide">
-          <img src="https://images.pexels.com/photos/302549/pexels-photo-302549.jpeg?auto=compress&cs=tinysrgb&w=600" alt="image"/>
-        </div>
-        
-      </div>    
-    </div>
-  
-    <div id="controls" onclick="">  
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-      <label for="slide4"></label>    
-    </div>
-  </div>
-        
-        
+<div class="card">
+  <p-carousel
+    [value]="images"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    #carousel
+  >
+    "true">
+    <ng-template pTemplate="header"> </ng-template>
+    <ng-template let-image pTemplate="item">
+      <img routerLink="/reward" [src]="image" alt="Image" style="width: 100%" />
+    </ng-template>
+  </p-carousel>
 </div>

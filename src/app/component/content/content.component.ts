@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import { Carousel } from 'primeng/carousel'; 
 
 
 @Component({
@@ -6,19 +7,33 @@ import { Component } from '@angular/core';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
 })
-export class ContentComponent {
-  cardInfolist: any = [
-    { id: 1, cardName: 'Card5', img: '' },
-    { id: 2, cardName: 'Card2', img: '' },
-    { id: 3, cardName: 'Card3', img: '' },
-    { id: 4, cardName: 'Card4', img: '' },
-  ];
 
-  ngOnInit(): void {
-    console.log('aaaa');
-  }
-  viewPdf(img:string) {
-      console.log(img);
-    console.log('ViewPdf');
-  }
+export class ContentComponent {
+  solutions = [{
+    header: 'Solution1',
+    content: 'detail'
+   },{
+    header: 'Solution2',
+    content: 'Detail2'
+   },{
+    header: 'Solution3',
+    content: 'Detail3'
+   },{
+    header: 'Solution4',
+    content: 'Detail4'
+   }]
+   
+   
+   images: string[] = [
+    'assets/images/giveaway winner.png',
+    'assets/images/event.png'
+  ];
+  
+  // สร้างอ้างอิงไปยัง Carousel โดยใช้ ViewChild
+  @ViewChild('carousel') carousel!: Carousel;
+   responsiveOptions: any[] | undefined;
+  
+
+  ngOnInit() {}
+  
 }

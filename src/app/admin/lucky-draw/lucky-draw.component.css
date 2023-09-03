@@ -1,0 +1,65 @@
+
+.big-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #acacac;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #404364;
+  position: absolute;
+}
+
+.ball-1 {
+  top: 150px;
+  left: 50px;
+}
+
+.ball-2 {
+  top: 150px;
+  right: 50;
+}
+
+.ball-3 {
+  top: 150px;
+  left: 110px;
+}
+
+.ball-4 {
+  top: 130px;
+  left: 130px;
+}
+
+.ball-5 {
+  top: 130px;
+  left: 30px;
+}
+
+.ball-6 {
+  top: 120px;
+  left: 60px;
+}
+
+.ball-7 {
+  top: 120px;
+  left: 95px;
+}
+
+
+  .draw-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
