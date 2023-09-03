@@ -21,7 +21,7 @@
       ></p-button> </p-accordionTab
   ></p-accordion>
 </div>
-<div class="card center-button">
+<div class="card center-button" *ngIf="!isUserPage">
   <p-button
     routerLink="/register"
     label="Register"
@@ -37,6 +37,7 @@
 
 <div class="card">
   <p-carousel
+    [style]="{'margin-top':'2em'}"
     [value]="images"
     [numVisible]="1"
     [numScroll]="1"

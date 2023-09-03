@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
   
-
+ 
 }

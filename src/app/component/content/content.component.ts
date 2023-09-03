@@ -1,5 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { Carousel } from 'primeng/carousel'; 
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -31,8 +32,14 @@ export class ContentComponent {
   // สร้างอ้างอิงไปยัง Carousel โดยใช้ ViewChild
   @ViewChild('carousel') carousel!: Carousel;
    responsiveOptions: any[] | undefined;
-  
+   isUserPage: boolean = false;
 
-  ngOnInit() {}
-  
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.url.subscribe(urlSegments => {
+      // ตรวจสอบว่าผู้ใช้เข้าสู่หน้า "user" หรือไม่
+      this.isUserPage = urlSegments.length > 0 && urlSegments[0].path === 'user';
+    });
+  }
 }
