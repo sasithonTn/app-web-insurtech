@@ -25,14 +25,14 @@ import { GalleriaModule } from 'primeng/galleria';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToastModule } from 'primeng/toast';
-import { ConfirmEventType, MessageService } from 'primeng/api';
+import {  MessageService } from 'primeng/api';
 import { ListboxModule } from 'primeng/listbox';
 import { ScrollerModule } from 'primeng/scroller';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api'; 
 import { MatButtonModule } from '@angular/material/button'; // นำเข้า MatButtonModule
-
+import { RouterModule } from '@angular/router';
 
 
 
@@ -112,7 +112,8 @@ import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-
     ScrollerModule,
     MultiSelectModule,
     ConfirmPopupModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
 
   providers: [MessageService,ConfirmationService],

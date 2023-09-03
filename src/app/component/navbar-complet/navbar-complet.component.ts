@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuItem, MessageService } from 'primeng/api';
+import { MenuItem ,ConfirmationService} from 'primeng/api';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { MenuItem, MessageService } from 'primeng/api';
 export class NavbarCompletComponent {
   items: MenuItem[];
 
-  constructor(private messageService: MessageService) {
+  constructor(private router: Router,
+) {
     this.items = [
       {
         label: 'ChangPassword',
@@ -23,15 +25,31 @@ export class NavbarCompletComponent {
       
       { label: 'Contact', icon: 'pi pi-send', url: 'https://www.yipintsoi.com/ContactUs.html' },
       { separator: true },
-      { label: 'Sign-out', icon: 'pi pi-sign-out', routerLink: ['/home-page'] },
-    ];
-  }
-  ChangePassword() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Updated' });
-}
+      { label: 'Sign-out', icon: 'pi pi-sign-out', routerLink:['/home-page'] },
 
-delete() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Deleted' });
-}
+  //     {
+  //       label: 'Sign-out',
+  //       icon: 'pi pi-sign-out ',
+  //       command: () => {
+  //         this.showSignOutDialog(); // เรียกใช้งานฟังก์ชันเพื่อแสดง Dialog ยืนยันการออกจากระบบ
+  //       },
+       ];
+  // }
 
+  // showSignOutDialog() {
+  //   this.confirmationService.confirm({
+  //     message: 'ต้องการออกจากระบบ?',
+  //     header: 'ยืนยัน',
+  //     icon: 'pi pi-exclamation-triangle',
+  //     accept: () => {
+  //       // ถ้าผู้ใช้กด "Yes" ให้นำผู้ใช้ไปยังหน้าหลัก
+  //       this.router.navigate(['/home-page']);
+  //     },
+  //     reject: () => {
+  //       // ถ้าผู้ใช้กด "No" ไม่ต้องทำอะไร
+  //     }
+  //   });
+  // }
+  
+    }
 }

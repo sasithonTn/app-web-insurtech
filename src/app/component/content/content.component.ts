@@ -9,8 +9,8 @@ import { Carousel } from 'primeng/carousel';
 })
 export class ContentComponent {
   solutions = [{
-    header: 'Solution1',
-    content: 'detail'
+    header: 'Cloud and Infrastructure Modernization',
+    content: 'ยกระดับระบบโครงสร้างพื้นฐานทางด้าน IT ของธุรกิจ ผสานรวมระบบ Cloud และ On-Premises สู่ Hybrid Multi-Cloud'
    },{
     header: 'Solution2',
     content: 'Detail2'
