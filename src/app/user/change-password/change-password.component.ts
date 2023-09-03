@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent {
+  value!: string;
+  values!: string;
+
+
 
 }

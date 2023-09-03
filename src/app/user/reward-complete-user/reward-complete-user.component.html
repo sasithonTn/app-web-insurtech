@@ -1,0 +1,38 @@
+<app-navbar-complet></app-navbar-complet>
+<h2 style="text-align: center; color: white">ประกาศรายชื่อผู้โชคดี</h2>
+<div>
+  <ng-container *ngFor="let item of myData">
+    <p-button [label]="item.date" [styleClass]="item.styleClass"></p-button>
+  </ng-container>
+</div>
+<p-card
+  [style]="{
+    'margin-top': '2em',
+    'border-radius': '32px',
+    background:
+      'linear-gradient(180deg, rgba(41, 42, 161, 0.90) 0%, rgba(72, 134, 212, 0.90) 81.25%)'
+  }"
+>
+<div>
+    <ng-container *ngFor="let item of myArray; let i = index">
+    <p-card [style]="{ 'margin-top': '2em' }">
+      <p-button
+        [label]="item.label"
+        [styleClass]="'p-button-secondary p-button-text'"
+      ></p-button>
+    </p-card>
+    <div class="mb-2">
+      <!-- แสดงผู้ได้รับรางวัล -->
+      <ng-container *ngFor="let winner of userName">
+        <h6
+          style="text-align: center; color: white;"
+          *ngIf="i < winner.length" 
+        >
+          {{ winner[i] }}
+        </h6>
+      </ng-container>
+    </div>
+  </ng-container>
+  </div>
+  
+</p-card>
