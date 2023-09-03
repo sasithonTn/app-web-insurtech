@@ -7,7 +7,6 @@ import { Carousel } from 'primeng/carousel';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
 })
-
 export class ContentComponent {
   solutions = [{
     header: 'Solution1',
