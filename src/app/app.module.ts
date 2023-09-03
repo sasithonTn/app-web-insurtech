@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { MenubarModule } from 'primeng/menubar';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
-import { CardModule } from 'primeng/card';
-import { CarouselModule } from 'primeng/carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -13,10 +7,40 @@ import { AppComponent } from './app.component';
 import { CalendarModule } from 'primeng/calendar';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
+import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { PasswordModule } from 'primeng/password';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { PaginatorModule } from 'primeng/paginator';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { AccordionModule } from 'primeng/accordion';
+import { GalleriaModule } from 'primeng/galleria';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { ToastModule } from 'primeng/toast';
+import {  MessageService } from 'primeng/api';
+import { ListboxModule } from 'primeng/listbox';
+import { ScrollerModule } from 'primeng/scroller';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmationService } from 'primeng/api';
+import { MatButtonModule } from '@angular/material/button'; // นำเข้า MatButtonModule
+import { RouterModule } from '@angular/router';
+
+
+
+
 //--------------------------------------user---------------------------------------
 import { UserComponent } from './user/user.component';
+
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
-import { RegisterComponent } from './user/register/register.component';
 
 //-----------------------------------admin------------------------------------
 import { AdminComponent } from './admin/admin.component';
@@ -29,13 +53,17 @@ import { ResetPasswordComponent } from './admin/reset-password/reset-password.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { SigninComponent } from './home-page/sign-in/signin.component';
 import { RewardComponent } from './home-page/reward/reward.component';
-import { SolutionComponent } from './home-page/solution/solution.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { ContentComponent } from './component/content/content.component';
 import { DialogRewardComponent } from './dialog-reward/dialog-reward.component';
 
 
+import { DialogModule } from 'primeng/dialog';
+import { RegisterComponent } from './user/register/register.component';
+import { CompletComponent } from './user/complet/complet.component';
+import { NavbarCompletComponent } from './component/navbar-complet/navbar-complet.component';
+import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
 
 @NgModule({
   declarations: [
@@ -46,8 +74,6 @@ import { DialogRewardComponent } from './dialog-reward/dialog-reward.component';
     SigninComponent,
     RewardComponent,
     ChangePasswordComponent,
-    RegisterComponent,
-    SolutionComponent,
     MenuComponent,
     RewardSettingComponent,
     LuckyDrawComponent,
@@ -55,21 +81,46 @@ import { DialogRewardComponent } from './dialog-reward/dialog-reward.component';
     NavbarComponent,
     ContentComponent,
     DialogRewardComponent,
-
+    RegisterComponent,
+    CompletComponent,
+    NavbarCompletComponent,
+    RewardCompleteUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MenubarModule,
     ButtonModule,
-    BrowserAnimationsModule ,
+    BrowserAnimationsModule,
     RippleModule,
     CardModule,
     CarouselModule,
-
+    FormsModule,
+    CalendarModule,
+    AutoCompleteModule,
+    DropdownModule,
+    InputTextModule,
+    ConfirmDialogModule,
+    PasswordModule,
+    MatCardModule,
+    MatIconModule,
+    PaginatorModule,
+    DialogModule,
+    KeyFilterModule,
+    AccordionModule,
+    GalleriaModule,
+    TreeSelectModule,
+    SplitButtonModule,
+    ToastModule,
+    ListboxModule,
+    ScrollerModule,
+    MultiSelectModule,
+    ConfirmPopupModule,
+    MatButtonModule,
+    RouterModule
   ],
 
-  providers: [],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
