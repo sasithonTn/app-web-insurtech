@@ -33,6 +33,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
 import { MatButtonModule } from '@angular/material/button'; // นำเข้า MatButtonModule
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 
@@ -117,7 +119,9 @@ import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-
     MultiSelectModule,
     ConfirmPopupModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    ProgressSpinnerModule
   ],
 
   providers: [MessageService,ConfirmationService],

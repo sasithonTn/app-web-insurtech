@@ -24,8 +24,10 @@
           [style]="{
             width: '300px',
             'border-radius': '15px',
-            background: ' #081D5B'
+            background: ' #081D5B',
+          
           }"
+          [(ngModel)]="username"
         />
         <label htmlFor="username">Username</label>
       </span>
@@ -41,9 +43,12 @@
             'border-radius': '15px',
             background: ' #081D5B'
           }"
+          [(ngModel)]="email"
+
         />
         <label htmlFor="e-mail">e-mail</label>
       </span>
+      
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
@@ -56,6 +61,8 @@
             'border-radius': '15px',
             background: ' #081D5B'
           }"
+          [(ngModel)]="PhoneNo"
+
         />
         <label htmlFor="TelephoneNo">TelephoneNo.</label>
       </span>
@@ -71,6 +78,8 @@
             'border-radius': '15px',
             background: ' #081D5B'
           }"
+          [(ngModel)]="Company"
+
         />
         <label htmlFor="Company">Company</label>
       </span>
@@ -80,7 +89,11 @@
       >
         <div class="card flex justify-content-center">
           <p-multiSelect
-            [style]="{ width: '18em' , 'background':'#081D5B' , 'border-radius':'15px'}"
+            [style]="{
+              width: '18em',
+              background: '#081D5B',
+              'border-radius': '15px'
+            }"
             [options]="solution"
             [(ngModel)]="selectedSolution"
             defaultLabel="Select a Solution"
@@ -90,7 +103,7 @@
       </span>
     </p>
     <ng-template pTemplate="footer">
-      <p-button (click)="showDialog()" label="Register"></p-button>
+      <p-button (click)="register()" label="Register"></p-button>
       <p-dialog
         header="ลงทะเบียนสำเร็จ"
         [(visible)]="visible"
