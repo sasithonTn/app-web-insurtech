@@ -13,25 +13,32 @@ import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
-  //-----------------------user------------------------
+const userRoutes: Routes = [
   { path: 'user', component: UserComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'reward-complete-user', component: RewardCompleteUserComponent },
+];
 
-  //---------------------------admin----------------------
+const adminRoutes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'reward-setting', component: RewardSettingComponent },
   { path: 'lucky-draw', component: LuckyDrawComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
+];
 
-  //-----------------------------home---------------------------
+const homeRoutes: Routes = [
   { path: 'home-page', component: HomePageComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'sign-in', component: SigninComponent },
   { path: 'reward', component: RewardComponent },
+];
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
+  ...userRoutes,
+  ...adminRoutes,
+  ...homeRoutes,
 ];
 
 @NgModule({
