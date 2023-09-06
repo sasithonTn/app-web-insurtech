@@ -29,7 +29,9 @@
           }"
           [(ngModel)]="username"
         />
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username" 
+        [style]="{'color':'white'}"
+        >Username</label>
       </span>
       <span
         class="p-float-label"
@@ -44,11 +46,10 @@
             background: ' #081D5B'
           }"
           [(ngModel)]="email"
-
         />
-        <label htmlFor="e-mail">e-mail</label>
+        <label htmlFor="e-mail" [style]="{'color':'white'}">e-mail</label>
       </span>
-      
+
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
@@ -62,9 +63,8 @@
             background: ' #081D5B'
           }"
           [(ngModel)]="PhoneNo"
-
         />
-        <label htmlFor="TelephoneNo">TelephoneNo.</label>
+        <label htmlFor="TelephoneNo" [style]="{'color':'white'}">TelephoneNo.</label>
       </span>
       <span
         class="p-float-label"
@@ -79,14 +79,14 @@
             background: ' #081D5B'
           }"
           [(ngModel)]="Company"
-
         />
-        <label htmlFor="Company">Company</label>
+        <label htmlFor="Company" [style]="{'color':'white'}">Company</label>
       </span>
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
       >
+      <h4 style="color: white;">Select a Solution</h4>
         <div class="card flex justify-content-center">
           <p-multiSelect
             [style]="{
@@ -103,7 +103,11 @@
       </span>
     </p>
     <ng-template pTemplate="footer">
-      <p-button (click)="register()" label="Register"></p-button>
+      <p-button 
+      (click)="register()" 
+      label="Register"
+      [style]="{'margin-left':'5em'}"
+      ></p-button>
       <p-dialog
         header="ลงทะเบียนสำเร็จ"
         [(visible)]="visible"

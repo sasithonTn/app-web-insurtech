@@ -12,23 +12,34 @@ export class UserRegisterService{
     email:string,
     phoneNo:string,
     company:string,
-    solution: number
-  ){
+    solution : string[]
+      ){
     return this.http
     .post<any>('http://114.119.173.133:8080/insurtech/api/v1/userRegister',{
       username: username,
         email: email,
         phoneNo: phoneNo,
         company: company,
-        solutionProductId: solution,
+        solutionProducts: solution,
     })
     .pipe((res) =>{
       return res
     })
   }
     
+ getSolutionProducts(solution : string[]){
+  return this.http
+  .get<any>('http://114.119.173.133:8080/insurtech/api/v1/solutionProducts' + solution,{
+
+  })
+  .pipe((res)=>{
+    return res
+  })
+ } 
+  }
+
   
    
-    }
+    
 
 

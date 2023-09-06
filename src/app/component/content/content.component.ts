@@ -11,8 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ContentComponent {
   solutions = [{
     header: 'Cloud and Infrastructure Modernization',
-    content: 'ยกระดับระบบโครงสร้างพื้นฐานทางด้าน IT ของธุรกิจ ผสานรวมระบบ Cloud และ On-Premises สู่ Hybrid Multi-Cloud'
-   },{
+    content: 'ยกระดับระบบโครงสร้างพื้นฐานทางด้าน IT ของธุรกิจ ผสานรวมระบบ Cloud และ On-Premises สู่ Hybrid Multi-Cloud',
+    pdfUrl: 'https://www.africau.edu/images/default/sample.pdf' // URL ของ PDF สำหรับ Solution 1
+
+  },{
     header: 'Solution2',
     content: 'Detail2'
    },{

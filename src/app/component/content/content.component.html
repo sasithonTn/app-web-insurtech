@@ -9,17 +9,23 @@
       <p>
         {{ solution.content }}
       </p>
-      <p-button
-        icon="pi pi-search"
-        styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
-        label="View"
-      ></p-button>
-      <p-button
-        icon="pi pi-download"
-        styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
-        label="Download"
-      ></p-button> </p-accordionTab
-  ></p-accordion>
+      <a [href]="solution.pdfUrl" target="_blank">
+        <p-button
+          icon="pi pi-search"
+          styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
+          label="View"
+        ></p-button>
+      </a>
+      <a [href]="solution.pdfUrl" download>
+        <p-button
+          icon="pi pi-download"
+          styleClass="p-button-rounded p-button-info p-button-text p-button-raised"
+          label="Download"
+        ></p-button>
+</a>  
+    </p-accordionTab>
+  </p-accordion>
+  
 </div>
 <div class="card center-button" *ngIf="!isUserPage">
   <p-button
