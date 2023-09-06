@@ -42,4 +42,5 @@ export class ContentComponent {
       this.isUserPage = urlSegments.length > 0 && urlSegments[0].path === 'user';
     });
   }
+  
 }

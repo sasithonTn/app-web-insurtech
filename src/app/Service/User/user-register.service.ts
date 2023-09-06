@@ -16,11 +16,11 @@ export class UserRegisterService{
   ){
     return this.http
     .post<any>('http://114.119.173.133:8080/insurtech/api/v1/userRegister',{
-       username: username,
-       email: email,
-       phoneNo: phoneNo,
-       company:company,
-       solution: solution
+      username: username,
+        email: email,
+        phoneNo: phoneNo,
+        company: company,
+        solutionProductId: solution,
     })
     .pipe((res) =>{
       return res

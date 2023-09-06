@@ -45,19 +45,16 @@ export class RegisterComponent {
         this.selectedSolution
       ).subscribe(
         (res: any) => {
-          
+          // บันทึกข้อมูลสำเร็จ กำหนด visible เป็น true เพื่อแสดง p-dialog
+          this.visible = true;
           this.messageService.add({severity: 'success', summary: 'ลงทะเบียนสำเร็จ', detail: 'คุณได้ 1 สิทธิ์ลุ้นรางวัล'});
-          
-        
         },
         (err: any) => {
-          
           this.messageService.add({severity: 'error', summary: 'เกิดข้อผิดพลาดในการบันทึกข้อมูล', detail: 'กรุณาลองใหม่อีกครั้ง'});
           console.error('เกิดข้อผิดพลาดในการบันทึกข้อมูล:', err);
         }
       );
     } else {
-      
       this.messageService.add({severity: 'error', summary: 'กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง'});
     }
   }
