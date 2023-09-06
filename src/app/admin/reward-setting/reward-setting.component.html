@@ -1,77 +1,9 @@
-<div class>
-  <header class="navbar">
-    <div class="logo">Logo</div>
-    <div class="user-info">Username</div>
-  </header>
-  <nav class="menu-nav">
-    <a href="menu" class="back-btn">Back</a>
-  </nav>
-<div class="card card-container">
-    <div class="card gap-3 flex flex-column">
-        <div class="field col-12 -ml-3">
-            <h5 class="m-0 text-2xl font-bold">Reward Setting</h5>
-        </div>
-        <div class="grid formgrid p-fluid flex justify-content-center">
-            <div class="field col-12 md:col-6 mb-6 md:mb-6">
-                <span class="p-float-label">
-                         <input type="text" class="input-field" placeholder="วันที่จับรางวัล">
-                </span>
-             </div>
-        </div>
-         <div class="grid formgrid p-fluid flex justify-content-center">
-            <div class="field col-12 md:col-6 mb-6 md:mb-6">
-                <span class="p-float-label">
-                         <input type="text" class="input-field" placeholder="เวลาที่จับรางวัล">
-                </span>
-             </div>
-        </div>
-         <div class="grid formgrid p-fluid flex justify-content-center">
-            <div class="field col-12 md:col-6 mb-6 md:mb-6">
-                <span class="p-float-label">
-                         <input type="text" class="input-field" placeholder="รางวัลที่">
-                </span>
-             </div>
-        </div>
-         <div class="grid formgrid p-fluid flex justify-content-center">
-            <div class="field col-12 md:col-6 mb-6 md:mb-6">
-                <span class="p-float-label">
-                         <input type="text" class="input-field" placeholder="จำนวน">
-                </span>
-             </div>
-        </div>
-         <div class="grid formgrid p-fluid flex justify-content-center">
-            <div class="field col-12 md:col-6 mb-6 md:mb-6">
-                <span class="p-float-label">
-                         <input type="text" class="input-field" placeholder="ของรางวัล">
-                </span>
-             </div>
-        </div>
-            <button class="draw-button">Add</button>
-            <button class="draw-button">Clear</button>
+<app-navbar-complet></app-navbar-complet>
 
-    </div>
-  </div>
-<div class="table-container">
-  <button class="draw-button">Save</button>
-  <button class="draw-button">Delete</button>
-  <table>
-    <thead>
-      <tr>
-        <th>อันดับ</th>
-        <th>วันที่</th>
-        <th>เวลา</th>
-        <th>จำนวน</th>
-        <th>รางวัล</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item">
-        <td>{{ item.date }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="btmenu">
+<p-button icon="pi pi-microsoft" styleClass="p-button-rounded p-button-secondary" routerLink="/menu"></p-button>
 </div>
 
-
-
-
+<div class="title">
+ <h2>Reward Setting</h2>
+</div>

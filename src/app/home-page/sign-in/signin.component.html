@@ -18,8 +18,8 @@
 
     <p>
     <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-      <input pInputText id="username" [style]="{ width: '300px','background':'#081D5B' , 'border-radius':'15px','height':'45px'  }" [(ngModel)]="username" />
-      <label htmlFor="username">Username</label>
+      <input pInputText id="email" [style]="{ width: '300px','background':'#ffffff' , 'border-radius':'15px','height':'45px'  }" [(ngModel)]="email" />
+      <label htmlFor="Email">Email</label>
     </span>
       <!-- <span
         class="p-float-label"
@@ -29,17 +29,13 @@
         <label htmlFor="e-mail">e-mail</label>
       </span> -->
     <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' , 'margin-top': '30px' }">
-      <input pInputText type="password" id="password" [style]="{ width: '300px','background':'#081D5B' , 'border-radius':'15px' ,'height':'45px' }" [(ngModel)]="password" />
+      <input pInputText type="password" id="password" [style]="{ width: '300px','background':'#ffffff' , 'border-radius':'15px' ,'height':'45px' }" [(ngModel)]="password" />
       <label htmlFor="password">Password</label>
     </span>
     </p>
 
-    <div class="card flex justify-content-center">
-      <p-button
-        [style]="{ 'margin-top': '2em' }"
-        label="SignIn"
-        (click)="login()"
-      ></p-button>
-    </div>
+   <div class="buttons">
+      <button class="button" (click)="login()" >SignIn</button>
+  </div>
   </p-card>
 </div>
