@@ -17,10 +17,21 @@
     <h2 style="color: azure; text-align: center">SignIn</h2>
 
     <p>
-    <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-      <input pInputText id="email" [style]="{ width: '300px','background':'#ffffff' , 'border-radius':'15px','height':'45px'  }" [(ngModel)]="email" />
-      <label htmlFor="Email">Email</label>
-    </span>
+      <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
+        <input
+          pInputText
+          id="email"
+          [style]="{
+            width: '300px',
+            background: ' #081D5B',
+            color: 'white',
+            'border-radius': '15px',
+            height: '45px'
+          }"
+          [(ngModel)]="email"
+        />
+        <label htmlFor="Email" style="color: aliceblue;">Email</label>
+      </span>
       <!-- <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
@@ -28,14 +39,29 @@
         <input pInputText id="e-mail" [style]="{ width: '300px' }" />
         <label htmlFor="e-mail">e-mail</label>
       </span> -->
-    <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' , 'margin-top': '30px' }">
-      <input pInputText type="password" id="password" [style]="{ width: '300px','background':'#ffffff' , 'border-radius':'15px' ,'height':'45px' }" [(ngModel)]="password" />
-      <label htmlFor="password">Password</label>
-    </span>
+      <span
+        class="p-float-label"
+        [style]="{ 'margin-left': '-0.5em', 'margin-top': '30px' }"
+      >
+        <input
+          pInputText
+          type="password"
+          id="password"
+          [style]="{
+            width: '300px',
+            background: ' #081D5B',
+            color: 'white',
+            'border-radius': '15px',
+            height: '45px'
+          }"
+          [(ngModel)]="password"
+        />
+        <label htmlFor="password" style="color: aliceblue;">Password</label>
+      </span>
     </p>
 
-   <div class="buttons">
-      <button class="button" (click)="login()" >SignIn</button>
-  </div>
+    <div class="buttons">
+      <button class="button" (click)="login()">SignIn</button>
+    </div>
   </p-card>
 </div>
