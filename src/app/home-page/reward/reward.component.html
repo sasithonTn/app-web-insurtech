@@ -2,10 +2,15 @@
 
 <div class="card flex justify-content-center">
   <h2 style="text-align: center; color: white">ประกาศรายชื่อผู้โชคดี</h2>
-  <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
-</div>
+ </div>
 
-<div class="card flex justify-content-center">
+ <div class="popup">
+  <app-dialog-reward></app-dialog-reward>
+ </div>
+
+
+
+<!-- <div class="card flex justify-content-center">
   <p-card
     [style]="{
       'margin-top': '2em',
@@ -16,7 +21,7 @@
   >
     <ng-container *ngFor="let item of myArray">
       <div class="mb-2">
-        <!-- ใช้ class mb-2 เพื่อเพิ่มระยะห่างระหว่างรายการ -->
+        ใช้ class mb-2 เพื่อเพิ่มระยะห่างระหว่างรายการ
         <p-button
         routerLink="/reward-complete-user"
           label="{{ item.label }}"
@@ -24,11 +29,11 @@
             'margin-top': '1em',
             'border-radius': '11px',
             background: '#BDD4F1',
-            
+
           }"
           styleClass="p-button-raised p-button-text p-button-secondary"
         ></p-button>
       </div>
     </ng-container>
   </p-card>
-</div>
+</div> -->

@@ -1,0 +1,10 @@
+.popup {
+  width: 335px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  }
