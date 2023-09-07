@@ -1,6 +1,6 @@
 .popup {
   width: 335px;
-  height: 485px;
+  height: 500px;
   background: linear-gradient(180deg, #292AA1 0%, #4886D4 81%);
   border-radius: 32px;
   align-items: center;
@@ -8,7 +8,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -445px;
+  margin-top: -465px;
   position: relative;
   overflow: hidden;
 }
@@ -18,7 +18,46 @@
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
-    margin-top: -55px;
+    margin-top: -20px;
     justify-content: center;
 }
+
+.title_ {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .title_name {
+    width: 100%;
+    margin-top: -36px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .card_{
+    background: #9DBADF;
+    border-radius: 9px;
+    width: 95%;
+    height: 45px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+   }
+
+  .text{
+     text-align: center;
+     justify-content: center;
+     margin-top: 12px;
+     color: rgb(0, 0, 0);
+  }
+
 

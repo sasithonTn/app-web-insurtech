@@ -66,6 +66,8 @@ import { RegisterComponent } from './user/register/register.component';
 import { CompletComponent } from './user/complet/complet.component';
 import { NavbarCompletComponent } from './component/navbar-complet/navbar-complet.component';
 import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
+import { DialogSignInComponent } from './dialog-sign-in/dialog-sign-in.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,7 @@ import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-
     CompletComponent,
     NavbarCompletComponent,
     RewardCompleteUserComponent,
+    DialogSignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,10 +124,11 @@ import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-
     MatButtonModule,
     RouterModule,
     HttpClientModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    MatDialogModule,
   ],
 
-  providers: [MessageService,ConfirmationService],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

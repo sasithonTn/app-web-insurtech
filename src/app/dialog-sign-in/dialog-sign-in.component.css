@@ -1,0 +1,31 @@
+/* ตั้งค่าสีพื้นหลังและขนาดตัวอักษร */
+.dialog-container {
+  background-color: #ffffff;
+  padding: 20px;
+  font-size: 16px;
+}
+
+/* ตั้งค่าขนาดขอบ */
+.dialog-container h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+/* สไตล์ข้อความ */
+.dialog-container p {
+  margin: 10px 0;
+}
+
+/* ปุ่มปิด */
+.dialog-container .close-button {
+  cursor: pointer;
+  text-align: right;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #007bff;
+}
+
+/* ปุ่มปิดเมื่อโฮเวอร์ */
+.dialog-container .close-button:hover {
+  text-decoration: underline;
+}

@@ -1,6 +1,30 @@
-<div class="popup"></div>
+<div class="popup">
+  <div class="title_">
+    <h4 class="lucky-draw">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</h4>
+  </div>
 
-<div class="btclose">
+  <ng-container *ngFor="let prize of prizes">
+    <div class="title_">
+      <div class="card_">
+        <div class="text">รางวัลที่ {{ prize.position }} {{ prize.name }}</div>
+      </div>
+    </div>
+
+    <ng-container *ngFor="let winner of prize.winners">
+      <div class="title_name">
+        <div class="text">{{ winner.username }} {{ winner.lastname }}</div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <div class="btclose" *ngIf="showCloseButton">
     <p-button label="Close" styleClass="p-button-sm p-button-secondary" (click)="close()"></p-button>
+  </div>
+  
 </div>
+
+
+
+
+
 
