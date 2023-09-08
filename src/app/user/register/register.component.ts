@@ -17,7 +17,7 @@ export class RegisterComponent {
   Company: any;
 
   isLoading: boolean = false;
-  selectedSolution!: string[];
+  selectedSolution?: string[];
   visible: boolean = false;
   anotherVisible: boolean = false;
   fullVisible: boolean = false;
@@ -46,23 +46,18 @@ export class RegisterComponent {
     });
   }
   register(): void {
-    let solutionTitle : string[] = []
-    this.selectedSolution.map((value: any)=>{
-    return  solutionTitle.push(value.solutionProductTitle)
-
-    })
-    // const solutionTitle: string[] = this.selectedSolution.map(
-    //   (value: any) => value.solutionProductTitle
-    // );
-
-    console.log('selectSolu', this.selectedSolution);
     if (
       this.username &&
       this.email &&
       this.PhoneNo &&
       this.Company &&
-      solutionTitle
+      this.selectedSolution && this.selectedSolution.length > 0
     ) {
+      let solutionTitle: string[] = [];
+      this.selectedSolution.map((value: any) => {
+        return solutionTitle.push(value.solutionProductTitle);
+      });
+  
       this.userRegisterService
         .userRegister(
           this.username,
@@ -72,9 +67,9 @@ export class RegisterComponent {
           solutionTitle
         )
         .subscribe(
-          (response)=> {
+          (response) => {
             const username = (response as any).userUsername;
-            this.userRegisterService.setUsername(username); 
+            this.userRegisterService.setUsername(username);
             console.log('บันทึกข้อมูล');
             this.visible = true;
           },
@@ -87,8 +82,12 @@ export class RegisterComponent {
     } else {
       this.fullVisible = true;
       console.error('กรอกข้อมูลให้ครบถ้วน:');
-
+      // แสดงข้อความ "กรุณากรอกข้อมูล" หรือทำการแจ้งผู้ใช้ในที่ที่เหมาะสม
     }
   }
+  
+  
+  
+  
 
 }
