@@ -10,6 +10,7 @@ import { UserRegisterService } from 'src/app/Service/User/user-register.service'
 })
 export class NavbarCompletComponent {
   items: MenuItem[];
+  username: any;
 
   constructor(private router: Router,
     private userRegisterService: UserRegisterService
@@ -31,5 +32,17 @@ export class NavbarCompletComponent {
     ];
   }
   ngOnInit() {
+// ดึงค่า username จาก UserRegisterService
+this.username = this.userRegisterService.getUsername();                
   }
+  // getUsername(){
+  //   this.userRegisterService.getUsername().subscribe({
+  //     next: (res: any) => {
+  //       this.username = res;
+  //     },
+  //     complete:() =>{
+  //       console.log(this.username);
+  //     }
+  //   })
+  // }
 }

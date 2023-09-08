@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { UserRegisterService } from 'src/app/Service/User/user-register.service';
-import { MessageService } from 'primeng/api'; // เพิ่มนี้เพื่อใช้งาน MessageService
+import { MessageService } from 'primeng/api';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogSignInComponent } from 'src/app/dialog-sign-in/dialog-sign-in.component';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -16,40 +19,49 @@ export class RegisterComponent {
   isLoading: boolean = false;
   selectedSolution!: string[];
   visible: boolean = false;
-  solution: { name: string; code: string }[];
+  anotherVisible: boolean = false;
+  fullVisible: boolean = false;
+  solution: string[] = [];
 
   constructor(
     private userRegisterService: UserRegisterService,
-    private messageService: MessageService
-  ) {  this.solution = [];
+    private messageService: MessageService,
+    private dialog: MatDialog
+  ) {
+    this.solution = [];
   }
 
   ngOnInit(): void {
-    // เรียกใช้งาน userRegisterService เพื่อดึงข้อมูล solution จาก API
-    // this.userRegisterService.getSolutionProducts().subscribe(
-    //   (res: any) => {
-    //     // สำเร็จ: กำหนดค่าข้อมูล solution จาก API
-    //     this.solution = res.data;
-    //   },
-    //   (err: any) => {
-    //     // เกิดข้อผิดพลาด: แสดงข้อความผิดพลาดหรือจัดการตามที่ต้องการ
-    //     this.messageService.add({
-    //       severity: 'error',
-    //       summary: 'เกิดข้อผิดพลาดในการดึงข้อมูล solution',
-    //       detail: 'กรุณาลองใหม่อีกครั้ง',
-    //     });
-    //     console.error('เกิดข้อผิดพลาดในการดึงข้อมูล solution:', err);
-    //   }
-    // );
+    this.getSolutionTitle();
   }
 
+  getSolutionTitle() {
+    this.userRegisterService.getSolutionProductTitles().subscribe({
+      next: (res: any) => {
+        this.solution = res;
+      },
+      complete: () => {
+        console.log(this.solution);
+      },
+    });
+  }
   register(): void {
+    let solutionTitle : string[] = []
+    this.selectedSolution.map((value: any)=>{
+    return  solutionTitle.push(value.solutionProductTitle)
+
+    })
+    // const solutionTitle: string[] = this.selectedSolution.map(
+    //   (value: any) => value.solutionProductTitle
+    // );
+
+    console.log('selectSolu', this.selectedSolution);
     if (
       this.username &&
       this.email &&
       this.PhoneNo &&
       this.Company &&
-      this.selectedSolution
+      solutionTitle
     ) {
       this.userRegisterService
         .userRegister(
@@ -57,32 +69,26 @@ export class RegisterComponent {
           this.email,
           this.PhoneNo,
           this.Company,
-          this.selectedSolution
+          solutionTitle
         )
         .subscribe(
-          (res: any) => {
-            // บันทึกข้อมูลสำเร็จ กำหนด visible เป็น true เพื่อแสดง p-dialog
+          (res: HttpResponse<any>): void => {
+            const username = (Response as any).userUsername;
+            this.userRegisterService.setUsername(username); 
+            console.log('บันทึกข้อมูล');
             this.visible = true;
-            this.messageService.add({
-              severity: 'success',
-              summary: 'ลงทะเบียนสำเร็จ',
-              detail: 'คุณได้ 1 สิทธิ์ลุ้นรางวัล',
-            });
           },
           (err: any) => {
-            this.messageService.add({
-              severity: 'error',
-              summary: 'เกิดข้อผิดพลาดในการบันทึกข้อมูล',
-              detail: 'กรุณาลองใหม่อีกครั้ง',
-            });
+            // this.openDialog('อีเมลล์นี้ลงทะเบียนแล้ว กรุณาเข้าสู่ระบบ');
+            this.anotherVisible = true;
             console.error('เกิดข้อผิดพลาดในการบันทึกข้อมูล:', err);
           }
         );
     } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง',
-      });
+      this.fullVisible = true;
+      console.error('กรอกข้อมูลให้ครบถ้วน:');
+
     }
   }
+
 }
