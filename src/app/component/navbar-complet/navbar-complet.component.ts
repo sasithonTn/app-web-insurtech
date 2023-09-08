@@ -32,8 +32,8 @@ export class NavbarCompletComponent {
     ];
   }
   ngOnInit() {
-    // this.username = this.userRegisterService.getUsername(this.email, this.password);
-                
+// ดึงค่า username จาก UserRegisterService
+this.username = this.userRegisterService.getUsername();                
   }
   // getUsername(){
   //   this.userRegisterService.getUsername().subscribe({

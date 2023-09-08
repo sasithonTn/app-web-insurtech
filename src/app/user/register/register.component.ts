@@ -3,6 +3,7 @@ import { UserRegisterService } from 'src/app/Service/User/user-register.service'
 import { MessageService } from 'primeng/api';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSignInComponent } from 'src/app/dialog-sign-in/dialog-sign-in.component';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -45,14 +46,14 @@ export class RegisterComponent {
     });
   }
   register(): void {
-    // let solutionTitle : string[] = []
-    // this.selectedSolution.map((value: any)=>{
-    // return  solutionTitle.push(value.solutionProductTitle)
+    let solutionTitle : string[] = []
+    this.selectedSolution.map((value: any)=>{
+    return  solutionTitle.push(value.solutionProductTitle)
 
-    // })
-    const solutionTitle: string[] = this.selectedSolution.map(
-      (value: any) => value.solutionProductTitle
-    );
+    })
+    // const solutionTitle: string[] = this.selectedSolution.map(
+    //   (value: any) => value.solutionProductTitle
+    // );
 
     console.log('selectSolu', this.selectedSolution);
     if (
@@ -71,8 +72,9 @@ export class RegisterComponent {
           solutionTitle
         )
         .subscribe(
-          (res: any) => {
-            // บันทึกข้อมูลสำเร็จ กำหนด visible เป็น true เพื่อแสดง p-dialog
+          (res: HttpResponse<any>): void => {
+            const username = (Response as any).userUsername;
+            this.userRegisterService.setUsername(username); 
             console.log('บันทึกข้อมูล');
             this.visible = true;
           },

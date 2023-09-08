@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserRegisterService } from 'src/app/Service/User/user-sign-in.service';
+import { UserRegisterService } from 'src/app/Service/User/user-register.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSignInComponent } from 'src/app/dialog-sign-in/dialog-sign-in.component';
 
@@ -25,10 +25,17 @@ export class SigninComponent {
         (response) => {
           if ((response as any).userEmail === this.email) {
             if (this.email === 'ad2566' && this.password === 'ad6652') {
+              const username = (response as any).userUsername;
+              // ตั้งค่า username ใน UserRegisterService
+              this.userRegisterService.setUsername(username);
               this.router.navigate(['/menu']);
             } else {
-              this.router.navigate(['/user']);
-              // this.userRegisterService.setUsername((response as any).username);
+                         // ดึงค่า username ออกมาจาก response
+            const username = (response as any).userUsername;
+            // ตั้งค่า username ใน UserRegisterService
+            this.userRegisterService.setUsername(username);
+            this.router.navigate(['/user']);
+
             }
           } else {
             this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
