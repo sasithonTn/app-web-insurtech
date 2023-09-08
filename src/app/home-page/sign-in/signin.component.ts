@@ -28,6 +28,7 @@ export class SigninComponent {
               this.router.navigate(['/menu']);
             } else {
               this.router.navigate(['/user']);
+              // this.userRegisterService.setUsername((response as any).username);
             }
           } else {
             this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');

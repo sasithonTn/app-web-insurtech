@@ -103,28 +103,55 @@
             [options]="solution"
             [(ngModel)]="selectedSolution"
             defaultLabel="Select a Solution"
-            optionLabel="name"
+            optionLabel="solutionProductTitle"
           ></p-multiSelect>
         </div>
       </span>
     </p>
-    <ng-template pTemplate="footer">
+    <ng-template pTemplate="footer" >
       <p-button 
       (click)="register()" 
       label="Register"
       [style]="{'margin-left':'5em'}"
       ></p-button>
-      <p-dialog
+      <div class="surface-500">
+      <p-dialog  
         header="ลงทะเบียนสำเร็จ"
         [(visible)]="visible"
         [breakpoints]="{ '960px': '75vw' }"
-        [style]="{ width: '50vw' }"
+        [style]="{ width: '50vw'}"
         [draggable]="false"
         [resizable]="false"
+        
       >
-        <p>คุณได้ 1 สิทธิ์ลุ้นรางวัล</p>
-        <p-button routerLink="/user" label="หน้าแรก"></p-button>
+        <p style="text-align: center;">คุณได้ 1 สิทธิ์ลุ้นรางวัล</p>
+        <p-button [style]="{'margin-left': '5em', background:'#247CF7'}" routerLink="/user" label="หน้าแรก"></p-button>
       </p-dialog>
+</div>
+      <p-dialog surface-500
+      header="อีเมลล์นี้ลงทะเบียนแล้ว"
+      [(visible)]="anotherVisible"
+      [breakpoints]="{ '960px': '75vw' }"
+      [style]="{ width: '50vw'}"
+      [draggable]="false"
+      [resizable]="false"
+      
+    >
+      <p style="text-align: center;">กรุณาเข้าสู่ระบบ</p>
+      <p-button [style]="{'margin-left': '5em', background:'#247CF7'}" routerLink="/sign-in" label="SignIn"></p-button>
+    </p-dialog>
+
+    <p-dialog class = "surface-500"
+    header="กรอกข้อมูลให้ครบถ้วน"
+    [(visible)]="fullVisible"
+    [breakpoints]="{ '960px': '75vw' }"
+    [style]="{ width: '50vw'}"
+    [draggable]="false"
+    [resizable]="false"
+    
+  >
+  <!-- <p></p> -->
+  </p-dialog>
     </ng-template>
   </p-card>
 </div>
