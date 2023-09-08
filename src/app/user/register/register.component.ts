@@ -72,8 +72,8 @@ export class RegisterComponent {
           solutionTitle
         )
         .subscribe(
-          (res: HttpResponse<any>): void => {
-            const username = (Response as any).userUsername;
+          (response)=> {
+            const username = (response as any).userUsername;
             this.userRegisterService.setUsername(username); 
             console.log('บันทึกข้อมูล');
             this.visible = true;
