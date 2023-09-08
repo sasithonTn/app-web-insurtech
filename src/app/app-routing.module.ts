@@ -10,25 +10,52 @@ import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
-import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
+import { ListRewardComponent } from './home-page/list-reward/list-reward.component';
+import { AdminGuard } from './Guards/admin.guard';
+import { UserGuard } from './Guards/user.guard';
+import { AuthService } from './Guards/auth.service';
 
 const userRoutes: Routes = [
-  { path: 'user', component: UserComponent },
-  { path: 'change-password', component: ChangePasswordComponent },
-  { path: 'reward-complete-user', component: RewardCompleteUserComponent },
+  {
+    path: 'user',
+    component: UserComponent,
+    canActivate: [AuthService, UserGuard],
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent,
+    canActivate: [AuthService, UserGuard],
+  },
 ];
 
 const adminRoutes: Routes = [
-  { path: 'menu', component: MenuComponent },
-  { path: 'reward-setting', component: RewardSettingComponent },
-  { path: 'lucky-draw', component: LuckyDrawComponent },
-  { path: 'reset-password', component: ResetPasswordComponent },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    canActivate: [AuthService, AdminGuard],
+  },
+  {
+    path: 'reward-setting',
+    component: RewardSettingComponent,
+    canActivate: [AuthService, AdminGuard],
+  },
+  {
+    path: 'lucky-draw',
+    component: LuckyDrawComponent,
+    canActivate: [AuthService, AdminGuard],
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
+    canActivate: [AuthService, AdminGuard],
+  },
 ];
 
 const homeRoutes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'sign-in', component: SigninComponent },
+  { path: 'list-reward', component: ListRewardComponent },
   { path: 'reward', component: RewardComponent },
 ];
 
