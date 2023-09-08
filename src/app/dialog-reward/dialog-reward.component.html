@@ -1,6 +1,7 @@
 <div class="popup">
   <div class="title_">
     <h4 class="lucky-draw">ผลรางวัล วันที่ 25/08/2566 เวลา 11:00 น.</h4>
+    <!-- <h4 class="lucky-draw">ผลรางวัล วันที่ {{ selectedDate }} เวลา {{ selectedTime }}</h4> -->
   </div>
 
   <ng-container *ngFor="let prize of prizes">
@@ -17,10 +18,15 @@
     </ng-container>
   </ng-container>
 
-  <div class="btclose" *ngIf="showCloseButton">
-    <p-button label="Close" styleClass="p-button-sm p-button-secondary" (click)="close()"></p-button>
-  </div>
-  
+  <ng-container *ngIf="showCloseButton">
+    <div class="button">
+      <div class="btclose">
+        <p-button label="Close" styleClass="p-button-sm p-button-secondary" (click)="close()"></p-button>
+      </div>
+    </div>
+
+  </ng-container>
+
 </div>
 
 

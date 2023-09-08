@@ -5,6 +5,13 @@
   justify-content: center;
   display: block;
   margin-left: auto;
+  margin-top: 480px;
   margin-right: auto;
   position: relative;
   }
+
+.text{
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-size: 20px;
+}

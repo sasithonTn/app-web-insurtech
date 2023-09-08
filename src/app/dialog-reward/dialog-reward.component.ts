@@ -35,6 +35,20 @@ export class DialogRewardComponent {
     },
   ];
 
+  // selectedDate: string;
+  // selectedTime: string;
+  // selectedPrizes: any[]; // รางวัลที่เลือก
+
+  // constructor(private route: ActivatedRoute) {}
+
+  // ngOnInit() {
+  //   this.route.queryParams.subscribe((params) => {
+  //     this.selectedDate = params.date;
+  //     this.selectedTime = params.time;
+  //     // ดึงข้อมูลรางวัลตามวันที่และเวลาจาก API แล้วกำหนดให้กับ selectedPrizes
+  //   });
+  // }
+
   close() {
     this.closeDialog.emit();
   }

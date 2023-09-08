@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { ContentComponent } from "../component/content/ContentComponent";
+import { ContentComponent } from '../component/content/content.component';
 
 @NgModule({
     declarations: [
       ContentComponent
-  
+
     ],
     imports: [
-      
-  
-      
+
+
+
     ],
     providers: [],
     bootstrap: []

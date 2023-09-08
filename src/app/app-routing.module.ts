@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SigninComponent } from './home-page/sign-in/signin.component';
@@ -20,7 +19,6 @@ const userRoutes: Routes = [
 ];
 
 const adminRoutes: Routes = [
-  { path: 'admin', component: AdminComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'reward-setting', component: RewardSettingComponent },
   { path: 'lucky-draw', component: LuckyDrawComponent },

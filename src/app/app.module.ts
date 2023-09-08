@@ -25,7 +25,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToastModule } from 'primeng/toast';
-import {  MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ListboxModule } from 'primeng/listbox';
 import { ScrollerModule } from 'primeng/scroller';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -45,7 +45,6 @@ import { UserComponent } from './user/user.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
 
 //-----------------------------------admin------------------------------------
-import { AdminComponent } from './admin/admin.component';
 import { MenuComponent } from './admin/menu/menu.component';
 import { RewardSettingComponent } from './admin/reward-setting/reward-setting.component';
 import { LuckyDrawComponent } from './admin/lucky-draw/lucky-draw.component';
@@ -68,12 +67,12 @@ import { NavbarCompletComponent } from './component/navbar-complet/navbar-comple
 import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-complete-user.component';
 import { DialogSignInComponent } from './dialog-sign-in/dialog-sign-in.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ListRewardComponent } from './home-page/list-reward/list-reward.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AdminComponent,
     HomePageComponent,
     SigninComponent,
     RewardComponent,
@@ -90,6 +89,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavbarCompletComponent,
     RewardCompleteUserComponent,
     DialogSignInComponent,
+    ListRewardComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,10 +125,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     HttpClientModule,
     ProgressSpinnerModule,
-    MatDialogModule,
+     MatDialogModule,
   ],
 
-  providers: [MessageService, ConfirmationService],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

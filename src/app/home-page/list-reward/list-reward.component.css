@@ -1,3 +1,9 @@
+.head{
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-size: 20px;
+}
+
 .popup {
   width: 335px;
   height: 500px auto;
@@ -8,7 +14,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -465px;
   position: relative;
   overflow: hidden;
 }
@@ -28,12 +33,12 @@
 
 .title_ {
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: BDD4F1;
   }
 
   .title_name {
@@ -45,14 +50,13 @@
     justify-content: center;
   }
 
-
-  .card_{
+  .button{
     background: #9DBADF;
     border-radius: 9px;
     width: 95%;
     height: 45px;
     margin-top: -15px;
-    margin-bottom: 20px;
+    margin-bottom: -10px;
     display: flex;
     justify-content: center;
    }
