@@ -38,12 +38,12 @@ export class SigninComponent {
 
             }
           } else {
-            this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
+            this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
           }
         },
         (error) => {
-          //console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
-          this.openDialog('อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+          console.error('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้', error);
+          this.openDialog('เกิดข้อผิดพลาดในการตรวจสอบบัญชีผู้ใช้');
         }
       );
     } else {

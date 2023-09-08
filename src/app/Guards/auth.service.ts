@@ -15,10 +15,11 @@ export class AuthService {
       .set('password', password);
 
     try {
-      const response = await this.http.get<any>(
-        'http://114.119.173.133:8080/insurtech/api/v1/user',
-        { params }
-      ).toPromise();
+      const response = await this.http
+        .get<any>('http://114.119.173.133:8080/insurtech/api/v1/user', {
+          params,
+        })
+        .toPromise();
 
       // ตรวจสอบการตอบกลับจาก API ที่คุณใช้เพื่อตรวจสอบการล็อกอิน
       if (response && response.userEmail === email) {
