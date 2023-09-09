@@ -63,30 +63,34 @@ export class RegisterComponent {
           this.username,
           this.email,
           this.PhoneNo,
-          this.Company,
+
+    
+    this.Company,
           solutionTitle
         )
         .subscribe(
-          (response) => {
+          (response): void => {
+            this.openDialog('ลงทะเบียนสำเร็จ คุณได้ 1 สิทธิ์ลุ้นรางวัล');
             const username = (response as any).userUsername;
             this.userRegisterService.setUsername(username);
             console.log('บันทึกข้อมูล');
-            this.visible = true;
           },
           (err: any) => {
-            // this.openDialog('อีเมลล์นี้ลงทะเบียนแล้ว กรุณาเข้าสู่ระบบ');
-            this.anotherVisible = true;
+            this.openDialog('อีเมลล์นี้ลงทะเบียนแล้ว กรุณาเข้าสู่ระบบ');
             console.error('เกิดข้อผิดพลาดในการบันทึกข้อมูล:', err);
           }
         );
     } else {
-      this.fullVisible = true;
+      this.openDialog('กรอกข้อมูลให้ครบถ้วน');
       console.error('กรอกข้อมูลให้ครบถ้วน:');
-      // แสดงข้อความ "กรุณากรอกข้อมูล" หรือทำการแจ้งผู้ใช้ในที่ที่เหมาะสม
     }
   }
   
-  
+  openDialog(message: string) {
+    this.dialog.open(DialogSignInComponent, {
+      data: { message },
+    });
+  }
   
   
 

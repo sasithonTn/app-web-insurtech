@@ -11,6 +11,23 @@
     height: 10%; /* ความสูงเท่ากับความสูงของ div.card */
     
   }
+  ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link{
+    background: linear-gradient(0deg, rgb(119, 168, 233) 0%, rgb(44, 67, 135) 100%), rgb(29, 140, 248) !important;
+    color: white !important;
+
+  }
+  ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+    background: linear-gradient(0deg, rgb(192, 207, 252) 0%, rgb(247, 247, 247) 100%), rgb(29, 140, 248) !important;
+    color: rgb(0, 0, 0) !important;
+  }
  
- 
-    
+  ::ng-deep .p-accordion .p-accordion-content{
+
+    background: linear-gradient(0deg, rgb(122, 145, 219) 0%, rgb(247, 247, 247) 100%), rgb(198, 226, 255) !important;
+color: whit;
+  }
+  ::ng-deep .p-button.p-button-info.p-button-text{
+    background-color: #d0d9ff !important;
+
+  }
+  

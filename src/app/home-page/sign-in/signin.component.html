@@ -1,67 +1,22 @@
 <app-navbar></app-navbar>
 
-<div class="card flex justify-content-center">
-  <p-card
-    [style]="{
-      width: '326px',
-
-      'margin-left':'2.5em',
-      'margin-top': '5em ',
-      'background':
-        'linear-gradient(180deg, #6C4DEA 1%, #3C24B7 58%, #281062 100%)',
-        'border-radius': '22px',
-
-
-    }"
-  >
-    <h2 style="color: azure; text-align: center">SignIn</h2>
-
-    <p>
-      <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
-        <input
-          pInputText
-          id="email"
-          [style]="{
-            width: '300px',
-            background: ' #081D5B',
-            color: 'white',
-            'border-radius': '15px',
-            height: '45px'
-          }"
-          [(ngModel)]="email"
-        />
-        <label htmlFor="Email" style="color: aliceblue;">Email</label>
-      </span>
-      <!-- <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      >
-        <input pInputText id="e-mail" [style]="{ width: '300px' }" />
-        <label htmlFor="e-mail">e-mail</label>
-      </span> -->
-      <span
-        class="p-float-label"
-        [style]="{ 'margin-left': '-0.5em', 'margin-top': '30px' }"
-      >
-        <input
-          pInputText
-          type="password"
-          id="password"
-          [style]="{
-            width: '300px',
-            background: ' #081D5B',
-            color: 'white',
-            'border-radius': '15px',
-            height: '45px'
-          }"
-          [(ngModel)]="password"
-        />
-        <label htmlFor="password" style="color: aliceblue;">Password</label>
-      </span>
-    </p>
-
-    <div class="buttons">
-      <button class="button" (click)="login()">SignIn</button>
-    </div>
-  </p-card>
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#" >Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <h2 style="color: white;">SignIn</h2>
+      <input type="text" placeholder="email"/>
+      <input type="password" placeholder="password"/>
+      <button (click)="login()">login</button>
+      <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+    </form>
+  </div>
 </div>
+
+   
