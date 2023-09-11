@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+  CanActivate,
+} from '@angular/router';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserGuard implements CanActivate {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
-  canActivate(): boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean | UrlTree | Observable<boolean | UrlTree> {
     // ตรวจสอบสิทธิ์ของผู้ใช้
     if (this.authService.isUser()) {
       // ผู้ใช้เป็น User ให้ใช้งาน
@@ -20,4 +29,3 @@ export class UserGuard implements CanActivate {
     }
   }
 }
-
