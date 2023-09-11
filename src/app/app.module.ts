@@ -128,10 +128,16 @@ import { UserGuard } from './Guards/user.guard';
     RouterModule,
     HttpClientModule,
     ProgressSpinnerModule,
-     MatDialogModule,
+    MatDialogModule,
   ],
 
-  providers: [MessageService,ConfirmationService,AuthService,AdminGuard,UserGuard],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    AuthService,
+    AdminGuard,
+    UserGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

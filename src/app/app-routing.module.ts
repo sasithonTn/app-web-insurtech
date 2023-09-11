@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Route} from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SigninComponent } from './home-page/sign-in/signin.component';
@@ -15,7 +15,7 @@ import { AdminGuard } from './Guards/admin.guard';
 import { UserGuard } from './Guards/user.guard';
 import { AuthService } from './Guards/auth.service';
 
-const userRoutes: Routes = [
+const userRoutes: Route[] = [
   {
     path: 'user',
     component: UserComponent,
@@ -28,7 +28,7 @@ const userRoutes: Routes = [
   },
 ];
 
-const adminRoutes: Routes = [
+const adminRoutes: Route[] = [
   {
     path: 'menu',
     component: MenuComponent,
@@ -51,7 +51,7 @@ const adminRoutes: Routes = [
   },
 ];
 
-const homeRoutes: Routes = [
+const homeRoutes: Route[] = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'sign-in', component: SigninComponent },
@@ -59,7 +59,7 @@ const homeRoutes: Routes = [
   { path: 'reward', component: RewardComponent },
 ];
 
-const routes: Routes = [
+const routes: Route[] = [
   { path: '', redirectTo: 'home-page', pathMatch: 'prefix' },
   ...userRoutes,
   ...adminRoutes,
@@ -67,7 +67,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.(routes)forRoot],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
