@@ -19,7 +19,7 @@ export class UserRegisterService{
     solution : string[]
       ){
     return this.http
-    .post<any>('http://localhost:8080/insurtech/api/v1/userRegister',{
+    .post<any>('http://114.119.173.133:8080/insurtech/api/v1/userRegister',{
       username: username,
         email: email,
         phoneNo: phoneNo,
@@ -33,7 +33,7 @@ export class UserRegisterService{
 
   getSolutionProductTitles(){
     return this.http
-      .get<any>('http://localhost:8080/insurtech/api/v1/solutionProducts',{
+      .get<any>('http://114.119.173.133:8080/insurtech/api/v1/solutionProducts',{
 
       })
       .pipe((res)=>{
@@ -60,7 +60,7 @@ export class UserRegisterService{
   getUsername() {
     return this.username;
   }
-  
+
   userSignIn(email: string, password: string) {
     const params = new HttpParams()
       .set('email', email)

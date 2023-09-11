@@ -17,7 +17,7 @@ export class RegisterComponent {
   Company: any;
 
   isLoading: boolean = false;
-  selectedSolution!: string[];
+  selectedSolution?: string[];
   visible: boolean = false;
   anotherVisible: boolean = false;
   fullVisible: boolean = false;
@@ -46,49 +46,52 @@ export class RegisterComponent {
     });
   }
   register(): void {
-    let solutionTitle : string[] = []
-    this.selectedSolution.map((value: any)=>{
-    return  solutionTitle.push(value.solutionProductTitle)
-
-    })
-    // const solutionTitle: string[] = this.selectedSolution.map(
-    //   (value: any) => value.solutionProductTitle
-    // );
-
-    console.log('selectSolu', this.selectedSolution);
     if (
       this.username &&
       this.email &&
       this.PhoneNo &&
       this.Company &&
-      solutionTitle
+      this.selectedSolution && this.selectedSolution.length > 0
     ) {
+      let solutionTitle: string[] = [];
+      this.selectedSolution.map((value: any) => {
+        return solutionTitle.push(value.solutionProductTitle);
+      });
+  
       this.userRegisterService
         .userRegister(
           this.username,
           this.email,
           this.PhoneNo,
-          this.Company,
+
+    
+    this.Company,
           solutionTitle
         )
         .subscribe(
-          (res: HttpResponse<any>): void => {
-            const username = (Response as any).userUsername;
-            this.userRegisterService.setUsername(username); 
+          (response): void => {
+            this.openDialog('ลงทะเบียนสำเร็จ คุณได้ 1 สิทธิ์ลุ้นรางวัล');
+            const username = (response as any).userUsername;
+            this.userRegisterService.setUsername(username);
             console.log('บันทึกข้อมูล');
-            this.visible = true;
           },
           (err: any) => {
-            // this.openDialog('อีเมลล์นี้ลงทะเบียนแล้ว กรุณาเข้าสู่ระบบ');
-            this.anotherVisible = true;
+            this.openDialog('อีเมลล์นี้ลงทะเบียนแล้ว กรุณาเข้าสู่ระบบ');
             console.error('เกิดข้อผิดพลาดในการบันทึกข้อมูล:', err);
           }
         );
     } else {
-      this.fullVisible = true;
+      this.openDialog('กรอกข้อมูลให้ครบถ้วน');
       console.error('กรอกข้อมูลให้ครบถ้วน:');
-
     }
   }
+  
+  openDialog(message: string) {
+    this.dialog.open(DialogSignInComponent, {
+      data: { message },
+    });
+  }
+  
+  
 
 }

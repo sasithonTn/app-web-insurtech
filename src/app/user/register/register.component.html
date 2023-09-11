@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="card flex justify-content-center">
+<!-- <div class="card flex justify-content-center">
   <p-card
     [style]="{
       width: '326px',
@@ -19,7 +19,7 @@
     <p>
       <span class="p-float-label" [style]="{ 'margin-left': '-0.5em' }">
         <input
-          pInputText
+          pInputText 
           id="username"
           [style]="{
             width: '300px',
@@ -90,68 +90,39 @@
       <span
         class="p-float-label"
         [style]="{ 'margin-left': '-0.5em', 'margin-top': '2em' }"
-      >
-      <h4 style="color: white;">Select a Solution</h4>
-        <div class="card flex justify-content-center">
-          <p-multiSelect
-            [style]="{
-              width: '18em',
-              background: '#081D5B',
-              'border-radius': '15px',
-              color:'white'
-            }"
-            [options]="solution"
-            [(ngModel)]="selectedSolution"
-            defaultLabel="Select a Solution"
-            optionLabel="solutionProductTitle"
-          ></p-multiSelect>
-        </div>
-      </span>
-    </p>
-    <ng-template pTemplate="footer" >
-      <p-button 
-      (click)="register()" 
-      label="Register"
-      [style]="{'margin-left':'5em'}"
-      ></p-button>
-      <div class="surface-500">
-      <p-dialog  
-        header="ลงทะเบียนสำเร็จ"
-        [(visible)]="visible"
-        [breakpoints]="{ '960px': '75vw' }"
-        [style]="{ width: '50vw'}"
-        [draggable]="false"
-        [resizable]="false"
-        
-      >
-        <p style="text-align: center;">คุณได้ 1 สิทธิ์ลุ้นรางวัล</p>
-        <p-button [style]="{'margin-left': '5em', background:'#247CF7'}" routerLink="/user" label="หน้าแรก"></p-button>
-      </p-dialog>
-</div>
-      <p-dialog surface-500
-      header="อีเมลล์นี้ลงทะเบียนแล้ว"
-      [(visible)]="anotherVisible"
-      [breakpoints]="{ '960px': '75vw' }"
-      [style]="{ width: '50vw'}"
-      [draggable]="false"
-      [resizable]="false"
-      
-    >
-      <p style="text-align: center;">กรุณาเข้าสู่ระบบ</p>
-      <p-button [style]="{'margin-left': '5em', background:'#247CF7'}" routerLink="/sign-in" label="SignIn"></p-button>
-    </p-dialog>
+      > -->
+<div class="register-page"> 
+  <div class="form">
 
-    <p-dialog class = "surface-500"
-    header="กรอกข้อมูลให้ครบถ้วน"
-    [(visible)]="fullVisible"
-    [breakpoints]="{ '960px': '75vw' }"
-    [style]="{ width: '50vw'}"
-    [draggable]="false"
-    [resizable]="false"
-    
-  >
-  <!-- <p></p> -->
-  </p-dialog>
-    </ng-template>
-  </p-card>
+    <form class="register-form">
+      <h1 style="color: white;">Register</h1>
+      <input type="text"  placeholder="FirstName" class="color"/>
+      <input type="text" placeholder="email" />
+
+      <input type="text" placeholder="TelephoneNo." />
+
+      <input type="text" placeholder="Company" />
+     
+      <div class="card">
+        <p-multiSelect [style]="{
+          width: '17em',  
+          background: '#081D5B',
+          color:'white',
+          'border-radius': '15px',
+        }" [options]="solution" [(ngModel)]="selectedSolution" defaultLabel="Select a Solution"
+          optionLabel="solutionProductTitle" [ngModelOptions]="{ standalone: true }">
+        </p-multiSelect>
+
+
+      </div>
+      <button style="background: linear-gradient(90deg, #332BCC 0%, #7B42C5 100%); border-radius: 10px; box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      " (click)="register()">Register</button>
+      <p class="message">Not registered? <a routerLink="/sign-in" style="color: white;">Create an account</a></p>
+    </form>
+  </div>
 </div>
+
+
+
+   
+
