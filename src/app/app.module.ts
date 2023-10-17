@@ -38,7 +38,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 
-
 //--------------------------------------user---------------------------------------
 import { UserComponent } from './user/user.component';
 
