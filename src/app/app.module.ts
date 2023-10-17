@@ -68,9 +68,7 @@ import { RewardCompleteUserComponent } from './user/reward-complete-user/reward-
 import { DialogSignInComponent } from './dialog-sign-in/dialog-sign-in.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ListRewardComponent } from './home-page/list-reward/list-reward.component';
-import { AuthService } from './Guards/auth.service';
-import { AdminGuard } from './Guards/admin.guard';
-import { UserGuard } from './Guards/user.guard';
+
 
 @NgModule({
   declarations: [
@@ -134,9 +132,6 @@ import { UserGuard } from './Guards/user.guard';
   providers: [
     MessageService,
     ConfirmationService,
-    AuthService,
-    AdminGuard,
-    UserGuard,
   ],
   bootstrap: [AppComponent],
 })
